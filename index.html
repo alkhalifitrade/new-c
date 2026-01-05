@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#1e88e5">
+    <title>شركة الخليفي للتجارة - تسجيل عميل جديد</title>
+    
+    <!-- الخطوط العربية -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* التأكد من تحميل الخطوط بشكل صحيح */
+        @font-face {
+            font-family: 'Cairo';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/cairo/v28/SLXgc1nY6HkvangtZmpQdkhzfH5lkSs2SgRjCAGMQ1z0hGA-W1ToLQ-HmkA.woff2) format('woff2');
+            unicode-range: U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC;
+        }
+        @font-face {
+            font-family: 'Cairo';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/cairo/v28/SLXgc1nY6HkvangtZmpQdkhzfH5lkSs2SgRjCAGMQ1z0hOA_W1ToLQ-HmkA.woff2) format('woff2');
+            unicode-range: U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC;
+        }
+        @font-face {
+            font-family: 'Cairo';
+            font-style: normal;
+            font-weight: 900;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/cairo/v28/SLXgc1nY6HkvangtZmpQdkhzfH5lkSs2SgRjCAGMQ1z0hLQ8W1ToLQ-HmkA.woff2) format('woff2');
+            unicode-range: U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC;
+        }
+    </style>
+    
+    <!-- مكتبة jsPDF مع دعم الخطوط العربية -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    
+    <style>
+        :root {
+            --primary-color: #1e88e5;
+            --secondary-color: #90a4ae;
+            --accent-color: #64b5f6;
+            --dark-bg: #0d47a1;
+            --light-bg: #f5f7fa;
+            --text-dark: #263238;
+            --border-color: #1e88e5;
+            --shadow: 0 8px 32px rgba(30, 136, 229, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* تحسين عرض النصوص العربية */
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+        
+        html {
+            font-family: 'Cairo', sans-serif !important;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #0d47a1 0%, #1e88e5 50%, #42a5f5 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            direction: rtl;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* تأثير الخلفية */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(30, 136, 229, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: movePattern 60s linear infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes movePattern {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(-50px, -50px) rotate(360deg); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* رأس الصفحة */
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInDown 1s ease;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo-section {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.95));
+            backdrop-filter: blur(20px);
+            padding: 50px 30px;
+            border-radius: 20px 20px 0 0;
+            box-shadow: var(--shadow);
+            border: 2px solid var(--primary-color);
+            border-bottom: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(30, 136, 229, 0.08) 0%, transparent 70%);
+            animation: rotateBg 20s linear infinite;
+        }
+
+        @keyframes rotateBg {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .logo-container {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo-wrapper {
+            background: linear-gradient(135deg, rgba(30, 136, 229, 0.05), rgba(100, 181, 246, 0.05));
+            padding: 30px 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(30, 136, 229, 0.1);
+            position: relative;
+            animation: floatLogo 3s ease-in-out infinite;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(30, 136, 229, 0.1);
+        }
+
+        @keyframes floatLogo {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .logo-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color), var(--primary-color));
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .logo-wrapper:hover::before {
+            opacity: 0.2;
+        }
+
+        .company-logo {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: drop-shadow(0 5px 15px rgba(30, 136, 229, 0.2));
+            transition: all 0.3s ease;
+        }
+
+        .logo-wrapper:hover .company-logo {
+            transform: scale(1.05);
+            filter: drop-shadow(0 8px 25px rgba(30, 136, 229, 0.3));
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            text-align: center;
+            animation: fadeInUp 1s ease 0.5s both;
+            position: relative;
+            padding: 15px 30px;
+            background: linear-gradient(90deg, transparent, rgba(30, 136, 229, 0.05), transparent);
+            border-radius: 10px;
+        }
+
+        .subtitle::before,
+        .subtitle::after {
+            content: '✦';
+            color: var(--accent-color);
+            margin: 0 15px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        /* نموذج التسجيل */
+        .form-container {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            padding: 50px;
+            border-radius: 0 0 20px 20px;
+            box-shadow: var(--shadow);
+            border: 2px solid var(--primary-color);
+            border-top: none;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form-title {
+            font-family: 'Cairo', sans-serif;
+            font-size: 2rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid var(--primary-color);
+            font-weight: 700;
+            position: relative;
+        }
+
+        .form-title::after {
+            content: '👤';
+            position: absolute;
+            top: -10px;
+            right: 50%;
+            transform: translateX(50%);
+            font-size: 2.5rem;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            animation: slideIn 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .form-group:nth-child(2) { animation-delay: 0.1s; }
+        .form-group:nth-child(3) { animation-delay: 0.15s; }
+        .form-group:nth-child(4) { animation-delay: 0.2s; }
+        .form-group:nth-child(5) { animation-delay: 0.25s; }
+        .form-group:nth-child(6) { animation-delay: 0.3s; }
+        .form-group:nth-child(7) { animation-delay: 0.35s; }
+        .form-group:nth-child(8) { animation-delay: 0.4s; }
+        .form-group:nth-child(9) { animation-delay: 0.45s; }
+        .form-group:nth-child(10) { animation-delay: 0.5s; }
+        .form-group:nth-child(11) { animation-delay: 0.55s; }
+        .form-group:nth-child(12) { animation-delay: 0.6s; }
+        .form-group:nth-child(13) { animation-delay: 0.65s; }
+        .form-group:nth-child(14) { animation-delay: 0.7s; }
+        .form-group:nth-child(15) { animation-delay: 0.75s; }
+        .form-group:nth-child(16) { animation-delay: 0.8s; }
+        .form-group:nth-child(17) { animation-delay: 0.85s; }
+        .form-group:nth-child(18) { animation-delay: 0.9s; }
+        .form-group:nth-child(19) { animation-delay: 0.95s; }
+        .form-group:nth-child(20) { animation-delay: 1s; }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group.full-width h3 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 0;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, rgba(30, 136, 229, 0.08), rgba(100, 181, 246, 0.08));
+            border-right: 5px solid var(--primary-color);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            font-family: 'Cairo', sans-serif;
+            animation: slideInRight 0.8s ease;
+            box-shadow: 0 4px 15px rgba(30, 136, 229, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .form-group.full-width h3:hover {
+            transform: translateX(-5px);
+            box-shadow: 0 6px 20px rgba(30, 136, 229, 0.15);
+        }
+
+        .form-group.full-width h3 span {
+            font-size: 1.5rem;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        label {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+        }
+
+        label::before {
+            content: '●';
+            color: var(--primary-color);
+            margin-left: 8px;
+            font-size: 0.7rem;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="number"] {
+            padding: 14px 18px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-family: 'Cairo', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: white;
+            color: var(--text-dark);
+        }
+
+        input[type="text"]:focus,
+        input[type="date"]:focus,
+        input[type="number"]:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 4px rgba(30, 136, 229, 0.1);
+            transform: translateY(-2px);
+        }
+
+        input[type="text"]:hover,
+        input[type="date"]:hover,
+        input[type="number"]:hover {
+            border-color: var(--accent-color);
+        }
+
+        /* نصوص مساعدة */
+        .help-text {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 4px;
+            font-style: italic;
+        }
+
+        /* راديو للسداد */
+        .radio-group {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            margin-top: 8px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            font-size: 1rem;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+        }
+
+        .radio-option:hover {
+            color: var(--primary-color);
+        }
+
+        input[type="radio"] {
+            width: 22px;
+            height: 22px;
+            margin-left: 10px;
+            cursor: pointer;
+            accent-color: var(--primary-color);
+        }
+
+        /* زر التسجيل */
+        .submit-btn {
+            background: linear-gradient(135deg, var(--primary-color), #1565c0);
+            color: white;
+            padding: 18px 60px;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Cairo', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 8px 25px rgba(30, 136, 229, 0.3);
+            display: block;
+            margin: 40px auto 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .submit-btn:hover::before {
+            left: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(30, 136, 229, 0.4);
+            background: linear-gradient(135deg, #1565c0, var(--primary-color));
+        }
+
+        .submit-btn:active {
+            transform: translateY(-1px) scale(1.02);
+        }
+
+        /* التذييل */
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: var(--light-bg);
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* رسالة النجاح */
+        .success-message {
+            display: none;
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 30px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            box-shadow: 0 8px 25px rgba(46, 204, 113, 0.4);
+            animation: successPulse 0.6s ease;
+        }
+
+        @keyframes successPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        /* استجابة للشاشات الصغيرة - Mobile First Design */
+        
+        /* أجهزة التابلت والأصغر (1024px وأقل) */
+        @media (max-width: 1024px) {
+            .form-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .container {
+                max-width: 95%;
+            }
+            
+            body {
+                padding: 20px 15px;
+            }
+        }
+
+        /* أجهزة الجوال الكبيرة (768px وأقل) */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px 10px;
+            }
+            
+            .container {
+                max-width: 100%;
+            }
+            
+            .header {
+                margin-bottom: 30px;
+            }
+            
+            .logo-section {
+                padding: 35px 20px;
+                border-radius: 15px 15px 0 0;
+            }
+            
+            .logo {
+                font-size: 2rem;
+                line-height: 1.3;
+            }
+            
+            .logo-subtitle {
+                font-size: 0.9rem;
+                margin-top: 8px;
+            }
+            
+            .tagline {
+                font-size: 0.95rem;
+                margin-top: 15px;
+                padding: 10px 15px;
+            }
+            
+            .form-container {
+                padding: 30px 20px;
+                border-radius: 0 0 15px 15px;
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .form-group.full-width h3 {
+                font-size: 1.1rem;
+                padding: 12px 15px;
+            }
+            
+            .form-group.full-width h3 span {
+                font-size: 1.3rem;
+                margin-left: 8px;
+            }
+            
+            label {
+                font-size: 0.95rem;
+                margin-bottom: 6px;
+            }
+            
+            input[type="text"],
+            input[type="date"],
+            input[type="number"] {
+                padding: 14px 16px;
+                font-size: 16px; /* منع تكبير iOS التلقائي */
+                border-radius: 8px;
+            }
+            
+            .help-text {
+                font-size: 0.8rem;
+            }
+            
+            .radio-group {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+                padding: 12px;
+            }
+            
+            .radio-option {
+                font-size: 0.95rem;
+            }
+            
+            input[type="radio"] {
+                width: 20px;
+                height: 20px;
+            }
+            
+            .submit-btn {
+                padding: 16px 40px;
+                font-size: 1.1rem;
+                width: 100%;
+                margin-top: 20px;
+                border-radius: 12px;
+            }
+            
+            .success-message {
+                font-size: 1rem;
+                padding: 20px;
+                margin-top: 20px;
+                border-radius: 12px;
+            }
+        }
+
+        /* أجهزة الجوال الصغيرة (480px وأقل) */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px 8px;
+            }
+            
+            .logo-section {
+                padding: 25px 15px;
+                border-radius: 12px 12px 0 0;
+            }
+            
+            .logo {
+                font-size: 1.6rem;
+                line-height: 1.2;
+            }
+            
+            .logo-subtitle {
+                font-size: 0.8rem;
+                margin-top: 6px;
+            }
+            
+            .tagline {
+                font-size: 0.85rem;
+                margin-top: 12px;
+                padding: 8px 12px;
+            }
+            
+            .form-container {
+                padding: 20px 15px;
+                border-radius: 0 0 12px 12px;
+            }
+            
+            .form-grid {
+                gap: 18px;
+            }
+            
+            .form-group.full-width h3 {
+                font-size: 1rem;
+                padding: 10px 12px;
+                border-right-width: 4px;
+            }
+            
+            .form-group.full-width h3 span {
+                font-size: 1.2rem;
+                margin-left: 6px;
+            }
+            
+            label {
+                font-size: 0.9rem;
+                margin-bottom: 5px;
+            }
+            
+            label::before {
+                font-size: 0.6rem;
+                margin-left: 6px;
+            }
+            
+            input[type="text"],
+            input[type="date"],
+            input[type="number"] {
+                padding: 12px 14px;
+                font-size: 16px; /* منع تكبير iOS التلقائي */
+                border-radius: 8px;
+            }
+            
+            .help-text {
+                font-size: 0.75rem;
+                margin-top: 3px;
+            }
+            
+            .radio-group {
+                gap: 12px;
+                padding: 10px;
+            }
+            
+            .radio-option {
+                font-size: 0.9rem;
+            }
+            
+            input[type="radio"] {
+                width: 18px;
+                height: 18px;
+                margin-left: 8px;
+            }
+            
+            .submit-btn {
+                padding: 14px 35px;
+                font-size: 1rem;
+                width: 100%;
+                margin-top: 15px;
+                border-radius: 10px;
+            }
+            
+            .success-message {
+                font-size: 0.95rem;
+                padding: 18px;
+                margin-top: 15px;
+                border-radius: 10px;
+            }
+        }
+
+        /* أجهزة الجوال الصغيرة جداً (360px وأقل) */
+        @media (max-width: 360px) {
+            body {
+                padding: 8px 5px;
+            }
+            
+            .logo-section {
+                padding: 20px 12px;
+            }
+            
+            .logo {
+                font-size: 1.4rem;
+            }
+            
+            .logo-subtitle {
+                font-size: 0.75rem;
+            }
+            
+            .tagline {
+                font-size: 0.8rem;
+                padding: 6px 10px;
+            }
+            
+            .form-container {
+                padding: 18px 12px;
+            }
+            
+            .form-grid {
+                gap: 15px;
+            }
+            
+            .form-group.full-width h3 {
+                font-size: 0.95rem;
+                padding: 8px 10px;
+            }
+            
+            .form-group.full-width h3 span {
+                font-size: 1.1rem;
+            }
+            
+            label {
+                font-size: 0.85rem;
+            }
+            
+            input[type="text"],
+            input[type="date"],
+            input[type="number"] {
+                padding: 10px 12px;
+                font-size: 16px;
+            }
+            
+            .submit-btn {
+                padding: 12px 30px;
+                font-size: 0.95rem;
+            }
+        }
+        
+        /* تحسينات إضافية للمس */
+        @media (hover: none) and (pointer: coarse) {
+            /* أجهزة اللمس */
+            input[type="text"],
+            input[type="date"],
+            input[type="number"] {
+                min-height: 44px; /* حجم اللمس المثالي */
+            }
+            
+            .submit-btn {
+                min-height: 48px; /* حجم اللمس المثالي للأزرار */
+            }
+            
+            input[type="radio"] {
+                min-width: 24px;
+                min-height: 24px;
+            }
+            
+            /* إزالة hover effects على أجهزة اللمس */
+            input[type="text"]:hover,
+            input[type="date"]:hover,
+            input[type="number"]:hover {
+                border-color: #e0e0e0;
+            }
+            
+            .form-group.full-width h3:hover {
+                transform: none;
+            }
+            
+            .radio-option:hover {
+                color: var(--text-dark);
+            }
+        }
+        
+        /* منع التكبير على iOS عند التركيز على الحقول */
+        @supports (-webkit-touch-callout: none) {
+            input[type="text"],
+            input[type="date"],
+            input[type="number"],
+            select,
+            textarea {
+                font-size: 16px !important;
+            }
+        }
+        
+        /* تحسين الأداء على الجوال */
+        @media (max-width: 768px) {
+            /* تقليل التأثيرات المتحركة */
+            * {
+                animation-duration: 0.3s !important;
+            }
+            
+            /* تحسين الخلفية المتحركة */
+            body::before {
+                animation-duration: 90s;
+                opacity: 0.3;
+            }
+        }
+
+        /* تأثيرات إضافية */
+        .decorative-line {
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+            margin: 30px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .decorative-line {
+                margin: 20px 0;
+                height: 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- رأس الصفحة -->
+        <div class="header">
+            <div class="logo-section">
+                <div class="logo-container">
+                    <div class="logo-wrapper">
+                        <img src="logo-alkhalifi.png" alt="شركة الخليفي للتجارة" class="company-logo">
+                    </div>
+                    <p class="subtitle">الريادة والتميز في عالم التجارة</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- نموذج التسجيل -->
+        <div class="form-container">
+            <h2 class="form-title">تسجيل عميل جديد</h2>
+            
+            <form id="registrationForm">
+                <div class="form-grid">
+                    <!-- قسم 1: معلومات المنشأة -->
+                    <div class="form-group full-width" style="grid-column: 1 / -1; margin-bottom: 20px;">
+                        <h3 style="color: var(--primary-color); font-size: 1.3rem; margin-bottom: 0; padding-bottom: 10px; border-bottom: 2px solid var(--primary-color); display: flex; align-items: center; font-family: 'Cairo', sans-serif;">
+                            <span style="margin-left: 10px;">🏢</span>
+                            معلومات المنشأة
+                        </h3>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tradeName">الإسم التجاري للمنشأة</label>
+                        <input type="text" id="tradeName" name="tradeName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ownerName">اسم صاحب المنشأة</label>
+                        <input type="text" id="ownerName" name="ownerName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="commercialRegister">رقم السجل التجاري</label>
+                        <input type="text" id="commercialRegister" name="commercialRegister" required pattern="\d{10,}" title="يجب أن يحتوي السجل التجاري على 10 أرقام على الأقل" minlength="10">
+                        <small style="color: #666; font-size: 0.85rem; display: block; margin-top: 4px;">10 أرقام على الأقل</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="registerSource">مصدر السجل التجاري</label>
+                        <input type="text" id="registerSource" name="registerSource" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="taxNumber">الرقم الضريبي</label>
+                        <input type="text" id="taxNumber" name="taxNumber" required pattern="\d{15}" title="يجب أن يحتوي الرقم الضريبي على 15 رقماً بالضبط" minlength="15" maxlength="15">
+                        <small style="color: #666; font-size: 0.85rem; display: block; margin-top: 4px;">15 رقماً بالضبط</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="commercialActivity">النشاط التجاري حسب السجل</label>
+                        <input type="text" id="commercialActivity" name="commercialActivity" required>
+                    </div>
+
+                    <!-- قسم 2: معلومات الاتصال -->
+                    <div class="form-group full-width" style="grid-column: 1 / -1; margin: 30px 0 20px;">
+                        <h3 style="color: var(--primary-color); font-size: 1.3rem; margin-bottom: 0; padding-bottom: 10px; border-bottom: 2px solid var(--primary-color); display: flex; align-items: center; font-family: 'Cairo', sans-serif;">
+                            <span style="margin-left: 10px;">📞</span>
+                            معلومات الاتصال
+                        </h3>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactNumber">رقم التواصل</label>
+                        <input type="text" id="contactNumber" name="contactNumber" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="responsiblePersonName">اسم الشخص المسؤول</label>
+                        <input type="text" id="responsiblePersonName" name="responsiblePersonName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="responsiblePersonNumber">رقم الشخص المسؤول</label>
+                        <input type="text" id="responsiblePersonNumber" name="responsiblePersonNumber" required>
+                    </div>
+
+                    <!-- قسم 3: العنوان الوطني -->
+                    <div class="form-group full-width" style="grid-column: 1 / -1; margin: 30px 0 20px;">
+                        <h3 style="color: var(--primary-color); font-size: 1.3rem; margin-bottom: 0; padding-bottom: 10px; border-bottom: 2px solid var(--primary-color); display: flex; align-items: center; font-family: 'Cairo', sans-serif;">
+                            <span style="margin-left: 10px;">📍</span>
+                            العنوان الوطني
+                        </h3>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="buildingNumber">رقم المبنى</label>
+                        <input type="text" id="buildingNumber" name="buildingNumber" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="streetName">اسم الشارع</label>
+                        <input type="text" id="streetName" name="streetName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="district">الحي</label>
+                        <input type="text" id="district" name="district" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city">المدينة</label>
+                        <input type="text" id="city" name="city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="region">المنطقة</label>
+                        <input type="text" id="region" name="region" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="postalCode">الرمز البريدي (اختياري)</label>
+                        <input type="text" id="postalCode" name="postalCode" maxlength="5" pattern="[0-9]{5}" placeholder="مثال: 12345">
+                        <div class="help-text">5 أرقام فقط</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="additionalNumber">الرقم الإضافي (اختياري)</label>
+                        <input type="text" id="additionalNumber" name="additionalNumber" maxlength="4" pattern="[0-9]{4}" placeholder="مثال: 1234">
+                        <div class="help-text">4 أرقام فقط</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="unitNumber">رقم الوحدة (اختياري)</label>
+                        <input type="text" id="unitNumber" name="unitNumber">
+                    </div>
+                    <div class="form-group">
+                        <label for="shortAddress">العنوان المختصر (اختياري)</label>
+                        <input type="text" id="shortAddress" name="shortAddress" placeholder="مثال: RKGA2345">
+                        <div class="help-text">كود العنوان الوطني المختصر</div>
+                    </div>
+
+                    <!-- قسم 4: المعلومات المالية والإدارية -->
+                    <div class="form-group full-width" style="grid-column: 1 / -1; margin: 30px 0 20px;">
+                        <h3 style="color: var(--primary-color); font-size: 1.3rem; margin-bottom: 0; padding-bottom: 10px; border-bottom: 2px solid var(--primary-color); display: flex; align-items: center; font-family: 'Cairo', sans-serif;">
+                            <span style="margin-left: 10px;">💰</span>
+                            المعلومات المالية والإدارية
+                        </h3>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="creditLimit">الحد الإئتماني المطلوب</label>
+                        <input type="text" id="creditLimit" name="creditLimit" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">التاريخ</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    
+                    <!-- فترة السداد -->
+                    <div class="form-group" style="grid-column: span 2;">
+                        <label>فترة السداد بالأيام</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="paymentPeriod" value="30 يوم" checked>
+                                <span>30 يوم</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="paymentPeriod" value="45 يوم">
+                                <span>45 يوم</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="paymentPeriod" value="غير ذلك">
+                                <span>غير ذلك</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="decorative-line"></div>
+
+                <button type="submit" class="submit-btn">تسجيل العميل وتحميل PDF</button>
+            </form>
+
+            <div id="successMessage" class="success-message">
+                ✓ تم تسجيل العميل بنجاح! جاري تحميل ملف PDF...
+            </div>
+        </div>
+
+        <!-- التذييل -->
+        <div class="footer">
+            <p>© 2025 شركة الخليفي للتجارة - جميع الحقوق محفوظة</p>
+            <p>نفخر بخدمتكم وتقديم أفضل الحلول التجارية</p>
+        </div>
+    </div>
+
+    <script>
+        // إعداد التاريخ الافتراضي لليوم
+        document.getElementById('date').valueAsDate = new Date();
+
+        // معالجة النموذج
+        document.getElementById('registrationForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // جمع البيانات من النموذج
+            const formData = {
+                // معلومات المنشأة
+                tradeName: document.getElementById('tradeName').value,
+                ownerName: document.getElementById('ownerName').value,
+                commercialRegister: document.getElementById('commercialRegister').value,
+                registerSource: document.getElementById('registerSource').value,
+                taxNumber: document.getElementById('taxNumber').value,
+                commercialActivity: document.getElementById('commercialActivity').value,
+                // معلومات الاتصال
+                contactNumber: document.getElementById('contactNumber').value,
+                responsiblePersonName: document.getElementById('responsiblePersonName').value,
+                responsiblePersonNumber: document.getElementById('responsiblePersonNumber').value,
+                // العنوان الوطني
+                buildingNumber: document.getElementById('buildingNumber').value,
+                streetName: document.getElementById('streetName').value,
+                district: document.getElementById('district').value,
+                city: document.getElementById('city').value,
+                region: document.getElementById('region').value,
+                postalCode: document.getElementById('postalCode').value,
+                additionalNumber: document.getElementById('additionalNumber').value,
+                unitNumber: document.getElementById('unitNumber').value,
+                shortAddress: document.getElementById('shortAddress').value,
+                // المعلومات المالية والإدارية
+                creditLimit: document.getElementById('creditLimit').value,
+                date: document.getElementById('date').value,
+                paymentPeriod: document.querySelector('input[name="paymentPeriod"]:checked').value
+            };
+
+            // عرض رسالة النجاح
+            document.getElementById('successMessage').classList.add('show');
+
+            // إنشاء ملف PDF بعد تأخير قصير
+            setTimeout(() => {
+                generatePDF(formData);
+            }, 1000);
+        });
+
+        // دالة إنشاء ملف PDF مع دعم كامل للعربية
+        async function generatePDF(data) {
+            try {
+                // التحقق من تحميل المكتبات المطلوبة
+                if (typeof html2canvas === 'undefined') {
+                    throw new Error('مكتبة html2canvas لم يتم تحميلها بشكل صحيح. يرجى تحديث الصفحة والمحاولة مرة أخرى.');
+                }
+                
+                if (typeof window.jspdf === 'undefined') {
+                    throw new Error('مكتبة jsPDF لم يتم تحميلها بشكل صحيح. يرجى تحديث الصفحة والمحاولة مرة أخرى.');
+                }
+                
+                console.log('بدء إنشاء PDF...');
+                console.log('البيانات:', data);
+                
+                // إنشاء PDF مباشرة
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF({
+                    orientation: 'portrait',
+                    unit: 'mm',
+                    format: 'a4',
+                    compress: true
+                });
+
+                // إنشاء عنصر HTML للصفحة الأولى
+                const page1Content = document.createElement('div');
+                page1Content.style.cssText = `
+                    width: 210mm;
+                    height: 297mm;
+                    padding: 0;
+                    background: white;
+                    font-family: 'Cairo', sans-serif;
+                    direction: rtl;
+                    color: #2c3e2f;
+                    position: fixed;
+                    left: -9999px;
+                    top: 0;
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                    text-rendering: optimizeLegibility;
+                `;
+                
+                const printDate = new Date().toLocaleDateString('ar-SA');
+                
+                page1Content.innerHTML = `
+                    <div style="width: 210mm; height: 297mm; padding: 20mm; background: white; position: relative;">
+                        <!-- Header -->
+                        <div style="background: linear-gradient(135deg, #0d47a1, #1e88e5); color: white; padding: 15px 20px; margin: -20mm -20mm 15mm -20mm; border-bottom: 3px solid #0d47a1;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <div style="text-align: right; flex: 1;">
+                                    <div style="font-size: 24px; font-weight: 900; font-family: 'Cairo', sans-serif; unicode-bidi: embed; direction: rtl; margin-bottom: 3px;">
+                                        شركة الخليفي للتجارة
+                                    </div>
+                                    <div style="font-size: 11px; opacity: 0.9; font-weight: 500;">
+                                        ALKHALIFI TRADING CO.
+                                    </div>
+                                </div>
+                                <div style="text-align: left; font-size: 9px; opacity: 0.85;">
+                                    <div>الصفحة 1/2</div>
+                                    <div style="margin-top: 2px;">التاريخ: ${printDate}</div>
+                                </div>
+                            </div>
+                            <div style="text-align: center; font-size: 14px; font-weight: 700; margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.3); unicode-bidi: embed; direction: rtl;">
+                                نموذج تسجيل عميل جديد
+                            </div>
+                        </div>
+
+                        <!-- محتوى الصفحة الأولى -->
+                        <div>
+                        <!-- قسم معلومات المنشأة -->
+                        <div style="background: linear-gradient(135deg, #0d47a1, #1e88e5); color: white; padding: 8px 15px; border-radius: 5px; margin-bottom: 10px;">
+                            <span style="font-size: 13px; font-weight: 900; letter-spacing: 0; font-family: 'Cairo', sans-serif; unicode-bidi: embed; direction: rtl;">🏢 معلومات المنشأة</span>
+                        </div>
+                        
+                        <table style="width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 12px; font-family: 'Cairo', sans-serif;">
+                            <tr>
+                                <td style="padding: 9px 10px; border-bottom: 1px solid #1e88e5; background: #e3f2fd; font-weight: 700; color: #0d47a1; width: 35%;">الإسم التجاري:</td>
+                                <td style="padding: 9px 10px; border-bottom: 1px solid #e0e0e0; text-align: right;">${data.tradeName}</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 9px 10px; border-bottom: 1px solid #1e88e5; background: #e3f2fd; font-weight: 700; color: #0d47a1;">اسم المالك:</td>
+                                <td style="padding: 9px 10px; border-bottom: 1px solid #e0e0e0; text-align: right;">${data.ownerName}</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 9px 10px; border-bottom: 1px solid #1e88e5; background: #e3f2fd; font-weight: 700; color: #0d47a1;">السجل التجاري:</td>
+                                <td style="padding: 9px 10px; border-bottom: 1px solid #e0e0e0; text-align: right;">${data.commercialRegister} - ${data.registerSource}</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 9px 10px; border-bottom: 1px solid #1e88e5; background: #e3f2fd; font-weight: 700; color: #0d47a1;">الرقم الضريبي:</td>
+                                <td style="padding: 9px 10px; border-bottom: 1px solid #e0e0e0; text-align: right;">${data.taxNumber}</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 9px 10px; border-bottom: 1px solid #1e88e5; background: #e3f2fd; font-weight: 700; color: #0d47a1;">النشاط التجاري:</td>
+                                <td style="padding: 9px 10px; border-bottom: 1px solid #e0e0e0; text-align: right;">${data.commercialActivity}</td>
+                            </tr>
+                        </table>
+
+                        <!-- قسم معلومات الاتصال -->
+                        <div style="background: linear-gradient(135deg, #0d47a1, #1e88e5); color: white; padding: 8px 15px; border-radius: 5px; margin-bottom: 10px;">
+                            <span style="font-size: 13px; font-weight: 900; letter-spacing: 0; font-family: 'Cairo', sans-serif; unicode-bidi: embed; direction: rtl;">📞 معلومات الاتصال</span>
+                        </div>
+                        
+                        <table style="width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 12px; font-family: 'Cairo', sans-serif;">
+                            <tr>
+                                <td style="padding: 9px 10px; border-bottom: 1px solid #1e88e5; background: #e3f2fd; font-weight: 700; color: #0d47a1; width: 35%;">رقم التواصل:</td>
+                                <td style="padding: 9px 10px; border-bottom: 1px solid #e0e0e0; text-align: right;">${data.contactNumber}</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 9px 10px; border-bottom: 1px solid #1e88e5; background: #e3f2fd; font-weight: 700; color: #0d47a1;">الشخص المسؤول:</td>
+                                <td style="padding: 9px 10px; border-bottom: 1px solid #e0e0e0; text-align: right;">${data.responsiblePersonName} - ${data.responsiblePersonNumber}</td>
+                            </tr>
+                        </table>
+
+                        <!-- قسم العنوان الوطني -->
+                        <div style="background: linear-gradient(135deg, #0d47a1, #1e88e5); color: white; padding: 8px 15px; border-radius: 5px; margin-bottom: 10px;">
+                            <span style="font-size: 13px; font-weight: 900; letter-spacing: 0; font-family: 'Cairo', sans-serif; unicode-bidi: embed; direction: rtl;">📍 العنوان الوطني</span>
+                        </div>
+                        
+                        <table style="width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 12px; font-family: 'Cairo', sans-serif;">
+                            <tr>
+                                <td style="padding: 9px 10px; border-bottom: 1px solid #1e88e5; background: #e3f2fd; font-weight: 700; color: #0d47a1; width: 35%;">العنوان الكامل:</td>
+                                <td style="padding: 9px 10px; border-bottom: 1px solid #e0e0e0; text-align: right;">
+                                    ${data.buildingNumber} - ${data.streetName} - ${data.district} - ${data.city} - ${data.region}
+                                </td>
+                            </tr>
+                            ${data.postalCode ? `<tr>
+                                <td style="padding: 9px 10px; border-bottom: 1px solid #1e88e5; background: #e3f2fd; font-weight: 700; color: #0d47a1;">الرمز البريدي:</td>
+                                <td style="padding: 9px 10px; border-bottom: 1px solid #e0e0e0; text-align: right;">${data.postalCode}</td>
+                            </tr>` : ''}
+                            ${data.additionalNumber ? `<tr>
+                                <td style="padding: 9px 10px; border-bottom: 1px solid #1e88e5; background: #e3f2fd; font-weight: 700; color: #0d47a1;">الرقم الإضافي:</td>
+                                <td style="padding: 9px 10px; border-bottom: 1px solid #e0e0e0; text-align: right;">${data.additionalNumber}</td>
+                            </tr>` : ''}
+                            ${data.unitNumber ? `<tr>
+                                <td style="padding: 9px 10px; border-bottom: 1px solid #1e88e5; background: #e3f2fd; font-weight: 700; color: #0d47a1;">رقم الوحدة:</td>
+                                <td style="padding: 9px 10px; border-bottom: 1px solid #e0e0e0; text-align: right;">${data.unitNumber}</td>
+                            </tr>` : ''}
+                            ${data.shortAddress ? `<tr>
+                                <td style="padding: 9px 10px; border-bottom: 1px solid #1e88e5; background: #e3f2fd; font-weight: 700; color: #0d47a1;">العنوان المختصر:</td>
+                                <td style="padding: 9px 10px; border-bottom: 1px solid #e0e0e0; text-align: right;">${data.shortAddress}</td>
+                            </tr>` : ''}
+                        </table>
+
+                        <!-- قسم المعلومات المالية -->
+                        <div style="background: linear-gradient(135deg, #0d47a1, #1e88e5); color: white; padding: 8px 15px; border-radius: 5px; margin-bottom: 10px;">
+                            <span style="font-size: 13px; font-weight: 900; letter-spacing: 0; font-family: 'Cairo', sans-serif; unicode-bidi: embed; direction: rtl;">💰 المعلومات المالية</span>
+                        </div>
+                        
+                        <table style="width: 100%; border-collapse: collapse; font-size: 12px; font-family: 'Cairo', sans-serif;">
+                            <tr>
+                                <td style="padding: 9px 10px; border-bottom: 1px solid #1e88e5; background: #e3f2fd; font-weight: 700; color: #0d47a1; width: 35%;">الحد الإئتماني:</td>
+                                <td style="padding: 9px 10px; border-bottom: 1px solid #e0e0e0; text-align: right;">${data.creditLimit}</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 9px 10px; border-bottom: 1px solid #1e88e5; background: #e3f2fd; font-weight: 700; color: #0d47a1;">فترة السداد:</td>
+                                <td style="padding: 9px 10px; border-bottom: 1px solid #e0e0e0; text-align: right;">${data.paymentPeriod}</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 9px 10px; border-bottom: 1px solid #1e88e5; background: #e3f2fd; font-weight: 700; color: #0d47a1;">التاريخ:</td>
+                                <td style="padding: 9px 10px; border-bottom: 1px solid #e0e0e0; text-align: right;">${data.date}</td>
+                            </tr>
+                        </table>
+                        </div>
+                        
+                        <!-- Footer الصفحة الأولى -->
+                        <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(135deg, #0d47a1, #1e88e5); color: white; padding: 12px 20px; text-align: center; border-top: 3px solid #0d47a1;">
+                            <div style="font-size: 10px; font-weight: 600; margin-bottom: 3px; unicode-bidi: embed; direction: rtl;">
+                                شركة الخليفي للتجارة - الريادة والتميز في عالم التجارة
+                            </div>
+                            <div style="font-size: 8px; opacity: 0.85;">
+                                ALKHALIFI TRADING CO. - Excellence in Trade
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                // إضافة الصفحة الأولى إلى DOM
+                document.body.appendChild(page1Content);
+                console.log('تم إضافة الصفحة الأولى');
+
+                // الانتظار لتحميل الخطوط
+                await document.fonts.ready;
+                await new Promise(resolve => setTimeout(resolve, 2000));
+                console.log('بدء التقاط الصفحة الأولى...');
+
+                // التقاط الصفحة الأولى
+                const canvas1 = await html2canvas(page1Content, {
+                    scale: 2,
+                    useCORS: false,
+                    allowTaint: true,
+                    backgroundColor: '#ffffff',
+                    logging: false,
+                    windowWidth: 794,
+                    windowHeight: 1123,
+                    imageTimeout: 0,
+                    foreignObjectRendering: false
+                });
+                console.log('تم التقاط الصفحة الأولى');
+
+                const imgData1 = canvas1.toDataURL('image/jpeg', 0.95);
+                pdf.addImage(imgData1, 'JPEG', 0, 0, 210, 297);
+                
+                // إزالة عنصر الصفحة الأولى
+                document.body.removeChild(page1Content);
+
+                // === الصفحة الثانية ===
+                const page2Content = document.createElement('div');
+                page2Content.style.cssText = `
+                    width: 210mm;
+                    height: 297mm;
+                    padding: 0;
+                    background: white;
+                    font-family: 'Cairo', sans-serif;
+                    direction: rtl;
+                    color: #2c3e2f;
+                    position: fixed;
+                    left: -9999px;
+                    top: 0;
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                    text-rendering: optimizeLegibility;
+                `;
+
+                page2Content.innerHTML = `
+                    <div style="width: 210mm; height: 297mm; padding: 20mm; background: white; position: relative;">
+                        <!-- Header الصفحة الثانية -->
+                        <div style="background: linear-gradient(135deg, #0d47a1, #1e88e5); color: white; padding: 15px 20px; margin: -20mm -20mm 15mm -20mm; border-bottom: 3px solid #0d47a1;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <div style="text-align: right; flex: 1;">
+                                    <div style="font-size: 24px; font-weight: 900; font-family: 'Cairo', sans-serif; unicode-bidi: embed; direction: rtl; margin-bottom: 3px;">
+                                        شركة الخليفي للتجارة
+                                    </div>
+                                    <div style="font-size: 11px; opacity: 0.9; font-weight: 500;">
+                                        ALKHALIFI TRADING CO.
+                                    </div>
+                                </div>
+                                <div style="text-align: left; font-size: 9px; opacity: 0.85;">
+                                    <div>الصفحة 2/2</div>
+                                </div>
+                            </div>
+                            <div style="text-align: center; font-size: 16px; font-weight: 700; margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.3); unicode-bidi: embed; direction: rtl;">
+                                الإقرار والشروط
+                            </div>
+                        </div>
+
+                        <!-- محتوى الإقرار -->
+                        <div>
+                        <div style="background: white; padding: 15px; border: 2px solid #0d47a1; border-radius: 8px; line-height: 1.8; text-align: justify; font-family: 'Cairo', sans-serif;">
+                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 11px; color: #2c3e50;">
+                                <li style="margin-bottom: 12px; padding-right: 25px; position: relative;">
+                                    <span style="position: absolute; right: 0; color: #0d47a1; font-weight: 700; font-size: 14px;">•</span>
+                                    أقر بأن المعلومات المبينة مسبقاً صحيحة ومطابقة للواقع.
+                                </li>
+                                
+                                <li style="margin-bottom: 12px; padding-right: 25px; position: relative;">
+                                    <span style="position: absolute; right: 0; color: #0d47a1; font-weight: 700; font-size: 14px;">•</span>
+                                    أتعهد بأن البضاعة المستلمة بموجب سند استلام أو فاتورة مبيعات موقع عليها بالاستلام مني أو من أحد العاملين من طرفنا حتى ولو لم يكن المستلم على كفالتنا على مسؤوليتي.
+                                </li>
+                                
+                                <li style="margin-bottom: 12px; padding-right: 25px; position: relative;">
+                                    <span style="position: absolute; right: 0; color: #0d47a1; font-weight: 700; font-size: 14px;">•</span>
+                                    كما أتعهد بسداد قيمة البضاعة المستلمة طبقاً لما سبق فور استحقاقها كما لا تعتبر البضاعة مسددة إلا بموجب سند قبض رسمي من شركة الخليفي للتجارة.
+                                </li>
+                                
+                                <li style="margin-bottom: 12px; padding-right: 25px; position: relative;">
+                                    <span style="position: absolute; right: 0; color: #0d47a1; font-weight: 700; font-size: 14px;">•</span>
+                                    أقر وأتعهد بسداد كافة المبالغ المستحق علينا حتى ولو تعدت المديونية الحد الائتماني المطلوب وذلك دون شروط حالاً عند الطلب من شركة الخليفي للتجارة ولها الحق في الرجوع للجهات المختصة مع مصاريف ودون اعتراض واحتجاج ويعد هذا بمثابة سند لأمر.
+                                </li>
+                                
+                                <li style="margin-bottom: 12px; padding-right: 25px; position: relative;">
+                                    <span style="position: absolute; right: 0; color: #0d47a1; font-weight: 700; font-size: 14px;">•</span>
+                                    في حالة بيع المنشأة أو تغيير في الاسم التجاري أو إيجارها أو في حالة إغلاقها لأي سبب نتعهد بتقديم إخطار رسمي بما يفيد ذلك.
+                                </li>
+                                
+                                <li style="margin-bottom: 12px; padding-right: 25px; position: relative;">
+                                    <span style="position: absolute; right: 0; color: #0d47a1; font-weight: 700; font-size: 14px;">•</span>
+                                    ونتعهد بكوننا متضامنين شخصياً مع المالك الجديد بسداد كافة المديونية القديمة المستحقة علينا فوراً أو وفق ما تحدده الشركة.
+                                </li>
+                                
+                                <li style="margin-bottom: 12px; padding-right: 25px; position: relative;">
+                                    <span style="position: absolute; right: 0; color: #0d47a1; font-weight: 700; font-size: 14px;">•</span>
+                                    في حالة عدم السداد خلال الفترة المحددة أو في حالة تعدي مديونيتنا الحد الائتماني المطلوب يحق لشركة الخليفي للتجارة إيقاف الحساب أو تعليقه.
+                                </li>
+                                
+                                <li style="margin-bottom: 12px; padding-right: 25px; position: relative;">
+                                    <span style="position: absolute; right: 0; color: #0d47a1; font-weight: 700; font-size: 14px;">•</span>
+                                    عمل مطابقة للرصيد بصفة دورية مع شركة الخليفي للتجارة (حسب النظام المتبع) على أن تعتبر (مطابقة للرصيد) مصادقة وإقراراً منا بصحته ويعتد أمام الجهات المختصة أي كانت.
+                                </li>
+                                
+                                <li style="margin-bottom: 12px; padding-right: 25px; position: relative;">
+                                    <span style="position: absolute; right: 0; color: #0d47a1; font-weight: 700; font-size: 14px;">•</span>
+                                    وبعد الموافقة على جميع ما سبق الرجاء فتح حساب خاص بنا لديكم طبقاً للآتي:
+                                </li>
+                            </ul>
+
+                            <div style="margin: 15px 0; padding: 15px; background: #f8f9fa; border-radius: 6px; border: 2px solid #0d47a1;">
+                                <div style="text-align: center; font-size: 11px; color: #0d47a1; line-height: 1.8;">
+                                    <div style="margin-bottom: 8px; font-weight: 700;">البيانات المالية المتفق عليها:</div>
+                                    <div><span style="font-weight: 700;">الحد الائتماني المطلوب:</span> ${data.creditLimit}</div>
+                                    <div><span style="font-weight: 700;">فترة السداد:</span> ${data.paymentPeriod}</div>
+                                </div>
+                            </div>
+
+                            <div style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 8px; border: 2px solid #0d47a1;">
+                                <div style="font-weight: 700; margin-bottom: 20px; color: #0d47a1; font-size: 12px; text-align: center; padding-bottom: 10px; border-bottom: 1px solid #1e88e5;">
+                                    اسم صاحب المنشأة: ${data.ownerName}
+                                </div>
+                                
+                                <table style="width: 100%; border-collapse: collapse;">
+                                    <tr>
+                                        <td style="text-align: center; padding: 10px; width: 33%;">
+                                            <div style="border-bottom: 2px solid #0d47a1; width: 140px; height: 45px; margin: 0 auto 10px; background: white;"></div>
+                                            <div style="font-size: 10px; color: #0d47a1; font-weight: 700;">التوقيع المعتمد</div>
+                                        </td>
+                                        
+                                        <td style="text-align: center; padding: 10px; width: 34%;">
+                                            <div style="border: 2px solid #0d47a1; width: 80px; height: 80px; margin: 0 auto 10px; border-radius: 50%; background: white;"></div>
+                                            <div style="font-size: 10px; color: #0d47a1; font-weight: 700;">الختم</div>
+                                        </td>
+                                        
+                                        <td style="text-align: center; padding: 10px; width: 33%;">
+                                            <div style="border-bottom: 2px solid #0d47a1; width: 140px; height: 45px; margin: 0 auto 10px; background: white;"></div>
+                                            <div style="font-size: 10px; color: #0d47a1; font-weight: 700;">غرفة تجارية</div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        </div>
+                        
+                        <!-- Footer الصفحة الثانية -->
+                        <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(135deg, #0d47a1, #1e88e5); color: white; padding: 12px 20px; text-align: center; border-top: 3px solid #0d47a1;">
+                            <div style="font-size: 10px; font-weight: 600; margin-bottom: 3px; unicode-bidi: embed; direction: rtl;">
+                                شركة الخليفي للتجارة - الريادة والتميز في عالم التجارة
+                            </div>
+                            <div style="font-size: 8px; opacity: 0.85;">
+                                ALKHALIFI TRADING CO. - Excellence in Trade
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                // إضافة الصفحة الثانية إلى DOM
+                document.body.appendChild(page2Content);
+                console.log('تم إضافة الصفحة الثانية');
+
+                // الانتظار لتحميل الخطوط
+                await new Promise(resolve => setTimeout(resolve, 2000));
+                console.log('بدء التقاط الصفحة الثانية...');
+
+                // التقاط الصفحة الثانية
+                const canvas2 = await html2canvas(page2Content, {
+                    scale: 2,
+                    useCORS: false,
+                    allowTaint: true,
+                    backgroundColor: '#ffffff',
+                    logging: false,
+                    windowWidth: 794,
+                    windowHeight: 1123,
+                    imageTimeout: 0,
+                    foreignObjectRendering: false
+                });
+                console.log('تم التقاط الصفحة الثانية');
+
+                const imgData2 = canvas2.toDataURL('image/jpeg', 0.95);
+                
+                // إضافة صفحة جديدة وإضافة الصورة الثانية
+                pdf.addPage();
+                pdf.addImage(imgData2, 'JPEG', 0, 0, 210, 297);
+                
+                // إزالة عنصر الصفحة الثانية
+                document.body.removeChild(page2Content);
+
+                // حفظ الملف
+                const filename = `تسجيل_عميل_${data.tradeName}_${Date.now()}.pdf`;
+                console.log('حفظ الملف:', filename);
+                pdf.save(filename);
+                console.log('تم حفظ الملف بنجاح!');
+                console.log('تم إزالة العنصر المؤقت');
+
+                // إخفاء رسالة النجاح
+                setTimeout(() => {
+                    document.getElementById('successMessage').classList.remove('show');
+                    document.getElementById('registrationForm').reset();
+                    document.getElementById('date').valueAsDate = new Date();
+                }, 2000);
+
+            } catch (error) {
+                console.error('خطأ في إنشاء PDF:', error);
+                console.error('تفاصيل الخطأ:', error.message);
+                console.error('Stack trace:', error.stack);
+                
+                // إزالة العنصر المؤقت إذا كان موجوداً
+                const tempElement = document.querySelector('div[style*="left: -9999px"]');
+                if (tempElement) {
+                    try {
+                        document.body.removeChild(tempElement);
+                    } catch (removeError) {
+                        console.error('خطأ في إزالة العنصر المؤقت:', removeError);
+                    }
+                }
+                
+                document.getElementById('successMessage').classList.remove('show');
+                alert('حدث خطأ في إنشاء ملف PDF:\n' + error.message + '\n\nيرجى التأكد من ملء جميع الحقول بشكل صحيح والمحاولة مرة أخرى.\n\nإذا استمرت المشكلة، يرجى تحديث الصفحة والمحاولة مرة أخرى.');
+            }
+        }
+    </script>
+</body>
+</html>
